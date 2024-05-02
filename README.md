@@ -17,3 +17,7 @@ cd target/debug
 cd hello
 cargo run
 ```
+
+### 文档
+
+https://course.rs/about-book.html
