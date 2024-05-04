@@ -7,6 +7,10 @@ fn main() {
 
     // println!("myarray[5] = {}", myarray[index]);
 
-    let mybuffer: [u32; 32 * 1024] = [0; 32 * 1024];
+    let mut mybuffer: [u32; 32 * 1024] = [0; 32 * 1024];
+    println!("mybuffer[1024] = {}", mybuffer[1024]);
+
+    mybuffer[1024] = 13;
+
     println!("mybuffer[1024] = {}", mybuffer[1024]);
 }
