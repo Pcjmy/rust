@@ -4,11 +4,10 @@
 // 常量：const 关键字
 // Shadowing: 隐藏
 
-// cargo build --release
 fn main() {
     let a: u32 = "4294967295".parse::<u32>().unwrap();
     let b: u32 = 1;
 
-    let sum = a + b;
-    println!("sum = {:?}", sum);
+    let (sum, is_overflow) = a.overflowing_add(b);
+    println!("sum = {:?}, is_overflow={:?}", sum, is_overflow);
 }
