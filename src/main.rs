@@ -8,6 +8,6 @@ fn main() {
     let a: u32 = "4294967295".parse::<u32>().unwrap();
     let b: u32 = 1;
 
-    let (sum, is_overflow) = a.overflowing_add(b);
-    println!("sum = {:?}, is_overflow={:?}", sum, is_overflow);
+    let (mul, is_overflow) = a.overflowing_mul(b);
+    println!("mul = {:?}, is_overflow={:?}", mul, is_overflow);
 }
