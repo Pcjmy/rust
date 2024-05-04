@@ -5,9 +5,9 @@
 // Shadowing: 隐藏
 
 fn main() {
-    let c = 'z';
-    let z = 'ℤ';
-    let heart_eyed_cat = '😻';
+    let a: u32 = 4294967295;
+    let b: u32 = 1;
 
-    println!("{} {} {}", c, z, heart_eyed_cat);
+    let sum = a + b;
+    println!("sum = {:?}", sum);
 }
