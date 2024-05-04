@@ -5,11 +5,7 @@
 // Shadowing: 隐藏
 
 fn main() {
-    let x = 5;
+    let c = 'z';
 
-    let x = x + 1;
-
-    let x = x * 2;
-
-    println!("The value of x is {}", x);
+    println!("{}", c);
 }
