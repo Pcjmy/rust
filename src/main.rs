@@ -1,12 +1,5 @@
 fn main() {
-    let a = 10;
-    let b = 'A';
+    let myarray: [u32; 5] = [1, 2, 3, 4, 5];
 
-    let mytuple = (a, b);
-
-    let (c, d) = mytuple;
-    println!("c={} d={}", c, d);
-
-    println!("mytuple.0 = {}", mytuple.0);
-    println!("mytuple.1 = {}", mytuple.1);
+    println!("myarray[1] = {}", myarray[1]);
 }
