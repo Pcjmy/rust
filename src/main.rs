@@ -1,12 +1,24 @@
+// 元组结构
+struct Pair(i32, f32);
+
+// 标准的C结构
+struct Person {
+    name: String,
+    age: u32,
+}
+
+// 单元结构（无字段，通常在泛型里使用较多）
+struct Unit;
+
 fn main() {
-    let mut arr: [i32; 5] = [1, 2, 3, 4, 5];
-    let slice = &arr[0..3];
-    println!("slice[0]={}, len={}", slice[0], slice.len());
+    let pair = Pair(10, 7.3);
+    println!("{}", pair.0);
 
-    let slice2 = &arr[3..5];
-    println!("slice2[0]={}, len={}", slice2[0], slice2.len());
+    let jack = Person {
+        name: String::from("jack"),
+        age: 6,
+    };
+    println!("name={} age={}", jack.name, jack.age);
 
-    let mut slice3 = &mut arr[..];
-    slice3[0] = 6;
-    println!("arr[0]={}", arr[0]);
+    let unit = Unit;
 }
