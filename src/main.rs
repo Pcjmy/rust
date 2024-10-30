@@ -1,14 +1,15 @@
-// 标准的C结构
-#[derive(Debug)] // 派生属性
-struct Person {
-    name: String,
-    age: u32,
+enum IPAddr {
+    IPv4(u8, u8, u8, u8),
+    IPv6(u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8),
 }
 
 fn main() {
-    let jack = Person {
-        name: String::from("jack"),
-        age: 6,
-    };
-    println!("{:?}", jack);
+    let localhost = IPAddr::IPv4(127, 0, 0, 1);
+
+    match localhost {
+        IPAddr::IPv4(a, b,c,d) => {
+            println!("{} {} {} {}", a, b, c, d);
+        }
+        _ => {}
+    }
 }
