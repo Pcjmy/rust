@@ -1,15 +1,11 @@
-enum IPAddr {
-    IPv4(u8, u8, u8, u8),
-    IPv6(u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8),
-}
-
 fn main() {
-    let localhost = IPAddr::IPv4(127, 0, 0, 1);
+    let n = 5;
 
-    match localhost {
-        IPAddr::IPv4(a, b,c,d) => {
-            println!("{} {} {} {}", a, b, c, d);
-        }
-        _ => {}
+    if n > 0 {
+        println!("{} is positive", n);
+    } else if n < 0 {
+        println!("{} is negative", n);
+    } else {
+        println!("{} is zero", n);
     }
 }
