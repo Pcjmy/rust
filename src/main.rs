@@ -8,4 +8,12 @@ fn main() {
     } else {
         println!("{} is zero", n);
     }
+
+    let m = if n < 0 {
+        2.0
+    } else {
+        3.0
+    };
+
+    println!("{}", m);
 }
