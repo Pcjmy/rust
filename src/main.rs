@@ -1,11 +1,20 @@
-fn main() {
-    let mut myarray = [1, 2, 3];
+enum Alphabet {
+    A,
+    B,
+    C,
+}
 
-    for i in myarray.iter_mut() {
-        *i *= 2;
+fn main() {
+    let letter = Alphabet::A;
+
+    match letter {
+        Alphabet::A => {
+            println!("It's A");
+        }
+        _ => {}
     }
 
-    for i in myarray.iter() {
-        println!("{}", i);
+    if let Alphabet::A = letter {
+        println!("It's A");
     }
 }
