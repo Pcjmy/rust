@@ -2,12 +2,12 @@ fn main() {
     let mut n = 1;
 
     while n < 101 {
-        if n % 3 == 0 && n % 5 == 0 {
-            println!("FizzBuzz");
+        if n % 15 == 0 {
+            println!("fizzbuzz");
         } else if n % 3 == 0 {
-            println!("Fizz");
+            println!("fizz");
         } else if n % 5 == 0 {
-            println!("Buzz");
+            println!("buzz");
         } else {
             println!("{}", n);
         }
