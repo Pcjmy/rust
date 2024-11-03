@@ -1,13 +1,13 @@
 fn main() {
-    let mut sum = 0;
-    let mut n = 1;
-    loop {
-        sum += n;
-        n += 1;
-        if n > 100 {
-            break;
-        }
-    }
+    let mut counter = 0;
 
-    println!("1 + 2 + ... + 100 = {}", sum);
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("result = {}", result);
 }
