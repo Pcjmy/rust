@@ -1,11 +1,7 @@
 fn main() {
-    for i in 0..5 {
-        println!("{}", i);
-    }
+    let myarray = ["a", "b", "c"];
 
-    println!("-----");
-
-    for i in 0..=5 {
-        println!("{}", i);
+    for i in myarray.iter() {
+        println!("{:?}", i);
     }
 }
