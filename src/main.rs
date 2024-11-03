@@ -1,12 +1,16 @@
-use std::thread;
+fn calc(method: fn(u32, u32) -> u32, a: u32, b: u32) -> u32 {
+    method(a, b)
+}
+
+fn add(a: u32, b: u32) -> u32 {
+    a + b
+}
+
+fn sub(a: u32, b: u32) -> u32 {
+    a - b
+}
 
 fn main() {
-    // move: 将环境中的值移到闭包内部
-    // 使用场景-多线程：从主线程移动值到子线程
-
-    let hello_message = "Hello World!";
-
-    thread::spawn(move || {
-        println!("{}", hello_message);
-    }).join();
+    println!("{}", calc(add, 10, 20));
+    println!("{}", calc(sub, 20, 10));
 }
