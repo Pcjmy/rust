@@ -1,20 +1,12 @@
-enum Alphabet {
-    A,
-    B,
-    C,
+enum Symbol {
+    Char(char),
+    Number,
 }
 
 fn main() {
-    let letter = Alphabet::A;
+    let letter = Symbol::Char('A');
 
-    match letter {
-        Alphabet::A => {
-            println!("It's A");
-        }
-        _ => {}
-    }
-
-    if let Alphabet::A = letter {
-        println!("It's A");
+    if let Symbol::Char(x) = letter {
+        println!("{}", x);
     }
 }
