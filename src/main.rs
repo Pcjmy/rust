@@ -1,19 +1,13 @@
 fn main() {
-    let n = 5;
-
-    if n > 0 {
-        println!("{} is positive", n);
-    } else if n < 0 {
-        println!("{} is negative", n);
-    } else {
-        println!("{} is zero", n);
+    let mut sum = 0;
+    let mut n = 1;
+    loop {
+        sum += n;
+        n += 1;
+        if n > 100 {
+            break;
+        }
     }
 
-    let m = if n < 0 {
-        2.0
-    } else {
-        3.0
-    };
-
-    println!("{}", m);
+    println!("1 + 2 + ... + 100 = {}", sum);
 }
