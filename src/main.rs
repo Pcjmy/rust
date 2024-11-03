@@ -1,15 +1,11 @@
-#[derive(Debug)]
-enum Alphabet {
-    A,
-    B,
+fn fibonacci(n: u64) -> u64 {
+    if n < 2 {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
 }
 
 fn main() {
-    let mut letter = Alphabet::A;
-
-    while let Alphabet::A = letter {
-        println!("{:?}", letter);
-
-        letter = Alphabet::B;
-    }
+    println!("{:?}", fibonacci(10));
 }
