@@ -9,9 +9,21 @@ impl Point {
     fn new(x: u64, y: u64) -> Point {
         Point { x, y }
     }
+
+    fn get_x(&self) -> u64 {
+        self.x
+    }
+
+    fn set_x(&mut self, x: u64) {
+        self.x = x;
+    }
 }
 
 fn main() {
-    let p = Point::new(10, 20);
+    let mut p = Point::new(10, 20);
+    println!("{:?}", p);
+    println!("{:?}", p.get_x());
+
+    p.set_x(30);
     println!("{:?}", p);
 }
