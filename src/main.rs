@@ -1,30 +1,11 @@
-use std::io;
-use rand::Rng;
+mod mod1 {
+    pub const MESSAGE: &str = "Hello World!";
+
+    pub mod mod2 {
+        pub const MESSAGE: &str = "Hello World!";
+    }
+}
 
 fn main() {
-    println!("Guess the number!");
-    let secret_number = rand::thread_rng().gen_range(1..101);
-
-    loop {
-        // 获取用户的输入
-        println!("Please input your guess:");
-        let mut guess = String::new();
-        io::stdin().read_line(&mut guess).unwrap();
-
-        let guess_number: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(err) => continue,
-        };
-
-        // 判断大小
-        if guess_number > secret_number {
-            println!("Too big!");
-        } else if guess_number < secret_number {
-            println!("Too small!");
-        } else {
-            // 如果正确的话，程序退出
-            println!("You win!");
-            break;
-        }
-    }
+    println!("{}", mod1::mod2::MESSAGE);
 }
