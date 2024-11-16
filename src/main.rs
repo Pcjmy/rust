@@ -5,11 +5,15 @@ mod mod1 {
     }
 
     impl Person {
-        pub fn new(name: &str, nickname: &str) -> Self {
+        pub fn new(name: &str) -> Self {
             Person {
                 name: String::from(name),
-                nickname: String::from(nickname),
+                nickname: String::new(),
             }
+        }
+
+        pub fn set_nickname(&mut self, nickname: &str) {
+            self.nickname = String::from(nickname);
         }
 
         pub fn say_nickname(&self) {
@@ -19,8 +23,8 @@ mod mod1 {
 }
 
 fn main() {
-    let p = mod1::Person::new("jack", "baby");
+    let mut p = mod1::Person::new("jack");
     println!("{}", p.name);
-    // println!("{}", p.nickname);
+    p.set_nickname("baby");
     p.say_nickname();
 }
