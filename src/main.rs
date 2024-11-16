@@ -1,22 +1,26 @@
 mod mod1 {
-    pub const MESSAGE: &str = "Hello World!";
-    pub(self) const NUMBER: u32 = 16;
-
-    pub(crate) enum CrateEnum {
-        Item = 4
+    pub struct Person {
+        pub name: String,
+        nickname: String,
     }
 
-    pub mod mod2 {
-        pub const MESSAGE: &str = "Hello World!";
+    impl Person {
+        pub fn new(name: &str, nickname: &str) -> Self {
+            Person {
+                name: String::from(name),
+                nickname: String::from(nickname),
+            }
+        }
 
-        pub fn say() {
-            println!("{}", super::NUMBER);
+        pub fn say_nickname(&self) {
+            println!("{}", self.nickname);
         }
     }
 }
 
 fn main() {
-    println!("{}", mod1::mod2::MESSAGE);
-    println!("{}", mod1::CrateEnum::Item as u32);
-    mod1::mod2::say();
+    let p = mod1::Person::new("jack", "baby");
+    println!("{}", p.name);
+    // println!("{}", p.nickname);
+    p.say_nickname();
 }
