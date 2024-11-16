@@ -17,6 +17,7 @@ mod mod1 {
         }
     }
 }
+
 fn main() {
     mod1::function();
     mod1::mod2::call();
