@@ -1,15 +1,16 @@
-fn largest<T: std::cmp::PartialOrd>(a: T, b: T) -> T {
-    if a > b {
-        a
-    } else {
-        b
-    }
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+struct Line<T> {
+    x: Point<T>,
+    y: Point<T>,
 }
 
 fn main() {
-    println!("{}", largest(10, 20));
-    println!("{}", largest(10.0, 20.0));
-    let a: f64 = 3.14;
-    let b: f64 = 2.71;
-    println!("{}", largest(a, b));
+    let point1  = Point{ x: 0, y: 0 };
+    let point2  = Point{ x: 2, y: 2 };
+    let line = Line{ x: point1, y: point2 };
+    println!("{} {} {} {}", line.x.x, line.x.y, line.y.x, line.y.y);
 }
