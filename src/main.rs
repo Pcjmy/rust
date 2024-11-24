@@ -1,5 +1,10 @@
 fn main() {
-    let s1 = String::from("Hello World");
-    let s2 = s1;
+    let s2: String;
+
+    {
+        let s1 = String::from("Hello World");
+        s2 = s1;
+    }
+
     println!("{}", s2);
 }
