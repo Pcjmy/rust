@@ -1,10 +1,9 @@
+fn echo(s: &String) {
+    println!("{}", s);
+}
+
 fn main() {
-    let s2: String;
-
-    {
-        let s1 = String::from("Hello World");
-        s2 = s1;
-    }
-
-    println!("{}", s2);
+    let s = String::from("Hello World!");
+    echo(&s);
+    println!("{}", s);
 }
