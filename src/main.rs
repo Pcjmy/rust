@@ -1,9 +1,11 @@
-fn change(s: &mut String) {
-    s.push_str(" changed!");
+fn bigger<'a>(str1: &'a str, str2: &'a str) -> &'a str {
+    if str1 > str2 {
+        str1
+    } else {
+        str2
+    }
 }
 
 fn main() {
-    let mut s = String::from("Hello World!");
-    change(&mut s);
-    println!("{}", s);
+    println!("{}", bigger("a", "b"));
 }
