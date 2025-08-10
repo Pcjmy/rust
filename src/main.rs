@@ -1,17 +1,22 @@
-fn bar() -> Result<u32, &'static str> {
-    Ok(0)
+#[derive(Debug)]
+pub enum Error {
+    IO(std::io::ErrorKind),
 }
 
-fn foo() -> Result<i32, &'static str> {
-    // match bar() {
-    //     Ok(a) => Ok(a as i32),
-    //     Err(e) => Err(e),
-    // }
-
-    let a = bar()?;
-    Ok(a as i32)
+impl From<std::io::Error> for Error {
+    fn from(error: std::io::Error) -> Self {
+        Error::IO(error.kind())
+    }
 }
 
-fn main() {
-    println!("{:?}", foo());
+fn do_read_file() -> Result<(), Error> {
+    let data = std::fs::read("hello.txt")?;
+    let data_str = std::str::from_utf8(&data).unwrap();
+    println!("{:?}", data_str);
+    Ok(())
+}
+
+fn main() -> Result<(), Error> {
+    do_read_file()?;
+    Ok(())
 }
