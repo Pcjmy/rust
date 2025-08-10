@@ -5,7 +5,7 @@ enum List {
     Nil,
 }
 
-fn main() {
-    let a = [0; 1024 * 512];
-    let a_box = Box::new(a);
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let f = std::fs::read("hello.txt")?;
+    Ok(())
 }
