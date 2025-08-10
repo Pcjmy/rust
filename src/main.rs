@@ -1,9 +1,5 @@
-#[derive(Debug)]
-struct Person<'a> {
-    name: &'a str,
-}
-
 fn main() {
-    let p = Person { name: "jack" };
-    println!("{:?}", p);
+    // panic! 宏
+    panic!("error!");
+    println!("here");
 }
