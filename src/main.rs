@@ -1,22 +1,10 @@
-#[derive(Debug)]
-pub enum Error {
-    IO(std::io::ErrorKind),
+// ConsList 每一项包含两个元素：当前项和下一项
+
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
 }
 
-impl From<std::io::Error> for Error {
-    fn from(error: std::io::Error) -> Self {
-        Error::IO(error.kind())
-    }
-}
-
-fn do_read_file() -> Result<(), Error> {
-    let data = std::fs::read("hello.txt")?;
-    let data_str = std::str::from_utf8(&data).unwrap();
-    println!("{:?}", data_str);
-    Ok(())
-}
-
-fn main() -> Result<(), Error> {
-    do_read_file()?;
-    Ok(())
+fn main() {
+    let list = List::Cons(0, Box::new(List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))))));
 }
