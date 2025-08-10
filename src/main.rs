@@ -2,6 +2,19 @@ fn add(a: u32, b: u32) -> u32 {
     unimplemented!()
 }
 
+fn divide_by_three(x: u32) -> u32 {
+    for i in 0.. {
+        if 3 * i < i {
+            panic!("u32 overflow");
+        }
+        if x < 3 * i {
+            return i - 1;
+        }
+    }
+
+    unreachable!()
+}
+
 fn main() {
     // panic! 宏
     // panic!("error!");
@@ -13,4 +26,7 @@ fn main() {
 
     // 未实现的代码 unimplemented!()
     // let c = add(1, 2);
+
+    // 不应当被访问到的代码 unreachable!()
+    divide_by_three(100);
 }
