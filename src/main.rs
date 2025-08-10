@@ -1,7 +1,14 @@
-fn main() {
-    let a: Result<u32, &'static str> = Result::Ok(1);
-    println!("{:?}", a);
 
-    let b: Result<u32, &'static str> = Result::Err("result error");
-    println!("{:?}", b);
+// std::fs::read
+
+fn main() {
+    let r = std::fs::read("hello.txt");
+    match r {
+        Ok(data) => {
+            println!("{:?}", std::str::from_utf8(&data).unwrap());
+        }
+        Err(err) => {
+            println!("{:?}", err);
+        }
+    }
 }
