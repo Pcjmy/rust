@@ -1,14 +1,17 @@
+fn bar() -> Result<u32, &'static str> {
+    Ok(0)
+}
 
-// std::fs::read
+fn foo() -> Result<i32, &'static str> {
+    // match bar() {
+    //     Ok(a) => Ok(a as i32),
+    //     Err(e) => Err(e),
+    // }
+
+    let a = bar()?;
+    Ok(a as i32)
+}
 
 fn main() {
-    let r = std::fs::read("hello.txt");
-    match r {
-        Ok(data) => {
-            println!("{:?}", std::str::from_utf8(&data).unwrap());
-        }
-        Err(err) => {
-            println!("{:?}", err);
-        }
-    }
+    println!("{:?}", foo());
 }
