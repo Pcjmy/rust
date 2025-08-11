@@ -1,11 +1,13 @@
-// ConsList 每一项包含两个元素：当前项和下一项
+use std::rc::Rc;
 
 enum List {
-    Cons(i32, Box<List>),
+    Cons(i32, Rc<List>),
     Nil,
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let f = std::fs::read("hello.txt")?;
-    Ok(())
+fn main() {
+    // 一个值可以有多个所有者
+    let four = Rc::new(List::Cons(4, Rc::new(List::Nil)));
+    let zero_one = List::Cons(0, Rc::new(List::Cons(1, four.clone())));
+    let two_three = List::Cons(2, Rc::new(List::Cons(3, four)));
 }
