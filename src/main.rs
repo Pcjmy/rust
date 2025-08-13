@@ -1,24 +1,29 @@
+use std::collections::HashMap;
+
 fn main() {
-    // let mut v: Vec<i32> = Vec::new();
-    // for i in 0..10 {
-    //     v.push(i);
-    // }
+    let mut transcript: HashMap<&str, u32> = HashMap::new();
 
-    let mut v: Vec<i32> = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    
-    // for i in 0..v.len() {
-    //     println!("v[{:?}]={:?}", i, v[i]);
-    // }
+    transcript.insert("alice", 95);
+    transcript.insert("bob", 92);
 
-    // for e in v.iter() {
-    //     println!("{:?}", e);
-    // }
-
-    for e in v.iter_mut() {
-        *e *= 2;
+    match transcript.get(&"alice") {
+        Some(data) => println!("alice's score is {:?}", data),
+        None => println!("alice is not in the transcript"),
     }
 
-    for i in 0..v.len() {
-        println!("v[{:?}]={:?}", i, v[i]);
+    match transcript.get(&"jack") {
+        Some(data) => println!("jack's score is {:?}", data),
+        None => println!("jack is not in the transcript"),
+    }
+
+    transcript.remove(&"alice");
+
+    match transcript.get(&"alice") {
+        Some(data) => println!("alice's score is {:?}", data),
+        None => println!("alice is not in the transcript"),
+    }
+
+    for (&name, &score) in transcript.iter() {
+        println!("{}'s score is {}", name, score);
     }
 }
