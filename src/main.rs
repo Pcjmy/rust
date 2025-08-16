@@ -7,10 +7,13 @@ fn main() {
     let now = SystemTime::now();
     println!("{:?}", now);
 
-    let timestamp = now.duration_since(SystemTime::UNIX_EPOCH).unwrap();
-    println!("timestamp = {:?}", timestamp);
+    // let timestamp = now.duration_since(SystemTime::UNIX_EPOCH).unwrap();
+    // println!("timestamp = {:?}", timestamp);
 
-    sleep(Duration::from_secs(3));
+    // sleep(Duration::from_secs(3));
 
-    println!("elapsed = {:?}", now.elapsed().unwrap());
+    // println!("elapsed = {:?}", now.elapsed().unwrap());
+
+    let future = now.checked_add(Duration::from_secs(60));
+    println!("future = {:?}", future);
 }
