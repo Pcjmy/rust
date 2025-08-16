@@ -1,4 +1,5 @@
-use std::time::{SystemTime};
+use std::time::{SystemTime, Duration};
+use std::thread::sleep;
 
 fn main() {
     // SystemTime 是系统时间
@@ -8,4 +9,8 @@ fn main() {
 
     let timestamp = now.duration_since(SystemTime::UNIX_EPOCH).unwrap();
     println!("timestamp = {:?}", timestamp);
+
+    sleep(Duration::from_secs(3));
+
+    println!("elapsed = {:?}", now.elapsed().unwrap());
 }
