@@ -53,6 +53,22 @@ impl Code {
       Opcode::RB as u8,
     ];
     let instrs: Vec<Opcode> = data.iter().filter(|x| dict.contains(x)).map(|x| Opcode::from(*x)).collect();
-    Ok(Code { instrs, jtable: std::collections::HashMap::new() })
+    let mut jtable = std::collections::HashMap::new();
+    let mut stack = Vec::new();
+    
+    for (i, op) in instrs.iter().enumerate() {
+      match op {
+        Opcode::LB => stack.push(i),
+        Opcode::RB => {
+          if let Some(j) = stack.pop() {
+            jtable.insert(j, i);
+            jtable.insert(i, j);
+          }
+        }
+        _ => ()
+      }
+    }
+    
+    Ok(Code { instrs, jtable })
   }
 }
