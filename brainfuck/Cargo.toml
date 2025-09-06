@@ -3,4 +3,12 @@ name = "brainfuck"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "interpreter"
+path = "src/main_interpreter.rs"
+
+[[bin]]
+name = "ir"
+path = "src/main_ir.rs"
+
 [dependencies]
