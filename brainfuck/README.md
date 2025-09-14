@@ -9,3 +9,5 @@ cargo build --release
 ### JIT
 
 [Hello, JIT World: The Joy of Simple JITs](https://blog.reverberate.org/2012/12/hello-jit-world-joy-of-simple-jits.html)
+
+[dynasm](https://crates.io/crates/dynasm)
