@@ -31,3 +31,7 @@ cargo run
 ### 文档
 
 https://course.rs/about-book.html
+
+### Rust 开源项目
+
+- [awesome-rust](https://github.com/rust-unofficial/awesome-rust)
