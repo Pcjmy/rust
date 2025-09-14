@@ -3,11 +3,11 @@ mod opcode;
 use opcode::{Opcode, Code};
 use std::io::{Read, Write};
 
-struct Interperter {
+struct Interpreter {
   stack: Vec<u8>,
 }
 
-impl Interperter {
+impl Interpreter {
   fn new() -> Self {
     Self {
       stack: vec![0; 1],
@@ -74,7 +74,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
   let data = std::fs::read(&args[1])?;
 
-  let mut interpreter = Interperter::new();
+  let mut interpreter = Interpreter::new();
 
   interpreter.run(data);
 
