@@ -30,7 +30,8 @@ cargo run
 
 ### 文档
 
-https://course.rs/about-book.html
+- [Rust Course](https://course.rs/about-book.html)
+- [The Rust Programming Language](https://doc.rust-lang.org/stable/book/title-page.html)
 
 ### Rust 开源项目
 
