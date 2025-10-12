@@ -1,19 +1,28 @@
-use std::time::{SystemTime, Duration};
-use std::thread::sleep;
+use std::rc::Rc;
+use std::cell::RefCell;
+
+struct Node<T> {
+    value: T,
+    left: Option<Rc<RefCell<Node<T>>>>,
+    right: Option<Rc<RefCell<Node<T>>>>,
+}
 
 fn main() {
-    // SystemTime 是系统时间
-    // 通过系统调用请求操作系统返回的系统时间
-    let now = SystemTime::now();
-    println!("{:?}", now);
+    let mut root = Node::<u32>{value: 1, left: None, right: None};
+    let left = Node::<u32>{value: 2, left: None, right: None};
+    let right = Node::<u32>{value: 3, left: None, right: None};
+    root.left = Some(Rc::new(RefCell::new(left)));
+    root.right = Some(Rc::new(RefCell::new(right)));
 
-    // let timestamp = now.duration_since(SystemTime::UNIX_EPOCH).unwrap();
-    // println!("timestamp = {:?}", timestamp);
+    // println!("root = {:?}", root.value);
+    // println!("left = {:?}", root.left.unwrap().value);
+    // println!("right = {:?}", root.right.unwrap().value);
 
-    // sleep(Duration::from_secs(3));
+    if let Some(ref mut x) = root.left {
+        x.borrow_mut().value = 4;
+    }
 
-    // println!("elapsed = {:?}", now.elapsed().unwrap());
-
-    let future = now.checked_add(Duration::from_secs(60));
-    println!("future = {:?}", future);
+    if let Some(ref x) = root.left {
+        println!("left = {:?}", x.borrow().value);
+    }
 }
