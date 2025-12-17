@@ -11,6 +11,10 @@ path = "src/problems/two_sum.rs"
 name = "group_anagrams"
 path = "src/problems/group_anagrams.rs"
 
+[[bin]]
+name = "longest_consecutive_sequence"
+path = "src/problems/longest_consecutive_sequence.rs"
+
 # Add more binary targets as you solve more problems
 # [[bin]]
 # name = "add_two_numbers"
