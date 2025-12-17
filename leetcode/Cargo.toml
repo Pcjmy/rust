@@ -1,0 +1,15 @@
+[package]
+name = "leetcode-solutions"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "two_sum"
+path = "src/problems/two_sum.rs"
+
+# Add more binary targets as you solve more problems
+# [[bin]]
+# name = "add_two_numbers"
+# path = "src/problems/add_two_numbers.rs"
+
+[dependencies]
