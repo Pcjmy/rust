@@ -15,9 +15,8 @@ path = "src/problems/group_anagrams.rs"
 name = "longest_consecutive_sequence"
 path = "src/problems/longest_consecutive_sequence.rs"
 
-# Add more binary targets as you solve more problems
-# [[bin]]
-# name = "add_two_numbers"
-# path = "src/problems/add_two_numbers.rs"
+[[bin]]
+name = "move_zeroes"
+path = "src/problems/move_zeroes.rs"
 
 [dependencies]
