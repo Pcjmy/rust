@@ -7,6 +7,10 @@ edition = "2021"
 name = "two_sum"
 path = "src/problems/two_sum.rs"
 
+[[bin]]
+name = "group_anagrams"
+path = "src/problems/group_anagrams.rs"
+
 # Add more binary targets as you solve more problems
 # [[bin]]
 # name = "add_two_numbers"
