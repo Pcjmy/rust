@@ -27,4 +27,8 @@ path = "src/problems/container_with_most_water.rs"
 name = "three_sum"
 path = "src/problems/three_sum.rs"
 
+[[bin]]
+name = "find_anagrams"
+path = "src/problems/find_anagrams.rs"
+
 [dependencies]
