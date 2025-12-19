@@ -19,4 +19,8 @@ path = "src/problems/longest_consecutive_sequence.rs"
 name = "move_zeroes"
 path = "src/problems/move_zeroes.rs"
 
+[[bin]]
+name = "container_with_most_water"
+path = "src/problems/container_with_most_water.rs"
+
 [dependencies]
