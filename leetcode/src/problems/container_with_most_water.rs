@@ -3,28 +3,20 @@ pub struct Solution;
 impl Solution {
     pub fn max_area(height: Vec<i32>) -> i32 {
         let len = height.len();
-        let mut minPos: [i32; 10005] = [0x3f3f3f3f; 10005];
-        let mut maxPos: [i32; 10005] = [0; 10005];
         let mut ans = 0;
+        let mut i = 0;
+        let mut j = len -1;
 
-        for i in 0..len {
-            minPos[height[i] as usize] = minPos[height[i] as usize].min(i as i32);
-            maxPos[height[i] as usize] = maxPos[height[i] as usize].max(i as i32);
+        while i < j {
+            ans = ans.max((j - i) as i32 * height[i].min(height[j]));
+            if height[i] < height [j] {
+                i += 1;
+            } else {
+                j -= 1;
+            }
         }
 
-        for i in (0..=10000).rev() {
-            minPos[i]=minPos[i].min(minPos[i+1]);
-            maxPos[i]=maxPos[i].max(maxPos[i+1]);
-        }
-
-        for i in 1..len {
-            ans=ans.max((i as i32 - minPos[height[i] as usize] as i32) * (height[i] as i32));
-        }
-
-        for i in (0..=len-1).rev() {
-            ans=ans.max((maxPos[height[i] as usize] as i32 - i as i32) * (height[i] as i32));
-        }
-        return ans as i32;
+        return ans;
     }
 }
 
