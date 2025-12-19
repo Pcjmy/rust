@@ -1,42 +1,40 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn normalize_triplet(mut triplet: [i32; 3]) -> [i32; 3] {
-        triplet.sort();
-        triplet
-    }
-
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        use std::collections::HashSet;
-        use std::collections::HashMap;
-
-        let len = nums.len();
-        let num_count: HashMap<i32, usize> = nums.iter().cloned().fold(HashMap::new(), |mut acc, x| {
-            *acc.entry(x).or_insert(0) += 1;
-            acc
-        });
-        let mut ans_set: HashSet<[i32; 3]> = HashSet::new();
+        let mut ans = Vec::new();
+        let mut vec = nums.clone();
+        vec.sort();
+        let len = vec.len();
 
         for i in 0..len {
+            if i > 0 && vec[i] == vec[i-1] {
+                continue;
+            }
+
+            let mut k = len - 1;
+
             for j in i+1..len {
-                let target = -(nums[i] + nums[j]);
-                let mut cnt = 1;
-                if nums[i] == target {
-                    cnt += 1;
+                if j >= k {
+                    break;
                 }
-                if nums[j] == target {
-                    cnt += 1;
+
+                if j > i + 1 && vec[j] == vec[j-1] {
+                    continue;
                 }
-                if let Some(&cnt2) = num_count.get(&target) {
-                    if cnt2 >= cnt {
-                        let triplet = Self::normalize_triplet([nums[i], nums[j], target]);
-                        ans_set.insert(triplet);
-                    }
+
+                while j + 1 < k && vec[i] + vec[j] + vec[k] > 0 {
+                    k -= 1;
+                }
+
+                let sum = vec[i] + vec[j] + vec[k];
+
+                if sum == 0 {
+                    ans.push(vec![vec[i], vec[j], vec[k]]);
                 }
             }
         }
-
-        return ans_set.into_iter().map(|v| v.to_vec()).collect();
+        return ans;
     }
 }
 
