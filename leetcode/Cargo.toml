@@ -23,4 +23,8 @@ path = "src/problems/move_zeroes.rs"
 name = "container_with_most_water"
 path = "src/problems/container_with_most_water.rs"
 
+[[bin]]
+name = "three_sum"
+path = "src/problems/three_sum.rs"
+
 [dependencies]
