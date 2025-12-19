@@ -16,13 +16,17 @@ impl Solution {
             return vec![];
         }
 
-        let s_count = Self::get_char_count(&s);
+        let mut s_count = Self::get_char_count(&s[0..p_len]);
         let p_count = Self::get_char_count(&p);
 
         let mut ans = Vec::new();
         for i in 0..=s_len - p_len {
-            let sub_count = Self::get_char_count(&s[i..i+p_len]);
-            if sub_count == p_count {
+            if i > 0 {
+                s_count[(s.as_bytes()[i-1] - b'a') as usize] -= 1;
+                s_count[(s.as_bytes()[i+p_len-1] - b'a') as usize] += 1;
+            }
+
+            if s_count == p_count {
                 ans.push(i as i32);
             }
         }
