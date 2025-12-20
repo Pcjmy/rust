@@ -2,27 +2,32 @@ pub struct Solution;
 
 impl Solution {
     pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
-        use std::collections::BinaryHeap;
+        use std::collections::VecDeque;
 
+        let mut deque = VecDeque::new();
         let mut ans = Vec::new();
         let len = nums.len();
-        let mut heap: BinaryHeap<(i32, i32)> = BinaryHeap::new();
 
-        for i in 0..k as usize {
-            heap.push((nums[i], i as i32));
-        }
-
-        for i in (k as usize -1)..len {
-            let pos = i as i32 - k;
-            if i >= k as usize {
-                heap.push((nums[i], i as i32));
-            }
-            while let Some(&(x, y)) = heap.peek() {
-                if y > pos {
-                    ans.push(x);
+        for i in 0..len {
+            while let Some(&back_val) = deque.back() {
+                if nums[i] >= nums[back_val] {
+                    deque.pop_back();
+                } else {
                     break;
                 }
-                heap.pop();
+            }
+            deque.push_back(i);
+            while let Some(&front_val) = deque.front() {
+                if front_val as i32 <= i as i32 - k {
+                    deque.pop_front();
+                } else {
+                    break;
+                }
+            }
+            if i >= k as usize -1 {
+                if let Some(&front_val) = deque.front() {
+                    ans.push(nums[front_val]);
+                }
             }
         }
 
