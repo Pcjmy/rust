@@ -39,4 +39,8 @@ path = "src/problems/subarray_sum.rs"
 name = "max_sliding_window"
 path = "src/problems/max_sliding_window.rs"
 
+[[bin]]
+name = "minimum_window_substring"
+path = "src/problems/minimum_window_substring.rs"
+
 [dependencies]
