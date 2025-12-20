@@ -35,4 +35,8 @@ path = "src/problems/find_anagrams.rs"
 name = "subarray_sum"
 path = "src/problems/subarray_sum.rs"
 
+[[bin]]
+name = "max_sliding_window"
+path = "src/problems/max_sliding_window.rs"
+
 [dependencies]
