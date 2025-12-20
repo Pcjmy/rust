@@ -31,4 +31,8 @@ path = "src/problems/three_sum.rs"
 name = "find_anagrams"
 path = "src/problems/find_anagrams.rs"
 
+[[bin]]
+name = "subarray_sum"
+path = "src/problems/subarray_sum.rs"
+
 [dependencies]
