@@ -55,4 +55,8 @@ path = "src/problems/rotate-array.rs"
 name = "product_except_self"
 path = "src/problems/product_except_self.rs"
 
+[[bin]]
+name = "first_missing_positive"
+path = "src/problems/first_missing_positive.rs"
+
 [dependencies]
