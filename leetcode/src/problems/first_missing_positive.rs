@@ -4,31 +4,17 @@ impl Solution {
     pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
         let mut arr = nums;
         let len = arr.len();
-        let mut flag = false;
         for i in 0..len {
-            if arr[i] == 1 {
-                flag = true;
-                arr[i] = 0;
-            }
-            if arr[i] < 0 || arr[i] > len as i32 {
-                arr[i] = 0;
-            }
-        }
-        if !flag {
-            return 1;
-        }
-        let mut x = arr[0];
-        for i in 0..len {
-            x = arr[i];
-            while x > 1 {
-                let mut y = arr[(x - 1) as usize];
-                arr[(x - 1) as usize] = 1;
-                x = y;
+            while i as i32 + 1 != arr[i] && arr[i] > 0 && arr[i] <= len as i32 {
+                let target = (arr[i] - 1) as usize;
+                if target as i32 + 1 == arr[target]{
+                    break;
+                }
+                arr.swap(i, target);
             }
         }
-        arr[0] = 1;
         for i in 0..len {
-            if arr[i] != 1 {
+            if i as i32 + 1 != arr[i] {
                 return i as i32 + 1;
             }
         }
