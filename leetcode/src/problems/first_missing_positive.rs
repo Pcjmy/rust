@@ -5,16 +5,18 @@ impl Solution {
         let mut arr = nums;
         let len = arr.len();
         for i in 0..len {
-            while i as i32 + 1 != arr[i] && arr[i] > 0 && arr[i] <= len as i32 {
-                let target = (arr[i] - 1) as usize;
-                if target as i32 + 1 == arr[target]{
-                    break;
-                }
-                arr.swap(i, target);
+            if arr[i] <= 0 || arr[i] > len as i32 {
+                arr[i] = len as i32 + 1;
             }
         }
         for i in 0..len {
-            if i as i32 + 1 != arr[i] {
+            let x = arr[i].abs();
+            if x > 0 && x <= len as i32 && arr[(x - 1) as usize] > 0 {
+                arr[(x - 1) as usize] = -arr[(x - 1) as usize];
+            }
+        }
+        for i in 0..len {
+            if arr[i] >= 0 {
                 return i as i32 + 1;
             }
         }
