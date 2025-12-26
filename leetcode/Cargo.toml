@@ -47,4 +47,8 @@ path = "src/problems/minimum_window_substring.rs"
 name = "merge_intervals"
 path = "src/problems/merge_intervals.rs"
 
+[[bin]]
+name = "rotate-array"
+path = "src/problems/rotate-array.rs"
+
 [dependencies]
