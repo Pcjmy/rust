@@ -1,18 +1,28 @@
 pub struct Solution;
 
 impl Solution {
+    pub fn reverse(nums: &mut Vec<i32>, left: i32, right: i32) {
+        if left < 0 || right < 0 {
+            return ;
+        }
+        let mut i = left as usize;
+        let mut j = right as usize;
+        while i < j {
+            nums.swap(i, j);
+            i += 1;
+            j -= 1;
+        }
+    }
+
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         if k == 0 {
             return ;
         }
-        let arr = nums.clone();
-        let x = nums[0];
         let len = nums.len();
-        let mut cur = 0;
-        for i in 0..len {
-            let pos = (i + k as usize) % len;
-            nums[pos] = arr[i];
-        }
+        let x = k as usize % len;
+        Self::reverse(nums, 0, len as i32 - 1);
+        Self::reverse(nums, 0, x as i32 - 1);
+        Self::reverse(nums, x as i32, len as i32 - 1);
     }
 }
 
