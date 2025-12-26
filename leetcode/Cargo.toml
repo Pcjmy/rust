@@ -51,4 +51,8 @@ path = "src/problems/merge_intervals.rs"
 name = "rotate-array"
 path = "src/problems/rotate-array.rs"
 
+[[bin]]
+name = "product_except_self"
+path = "src/problems/product_except_self.rs"
+
 [dependencies]
