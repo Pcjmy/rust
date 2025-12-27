@@ -4,24 +4,44 @@ impl Solution {
     pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
         let n = matrix.len();
         let m = matrix[0].len();
-        let mut row = vec![false; n];
-        let mut col = vec![false; m];
+        let mut r0 = false;
+        let mut c0 = false;
 
         for i in 0..n {
             for j in 0..m {
                 if matrix[i][j] == 0 {
-                    row[i] = true;
-                    col[j] = true;
+                    if i == 0 {
+                        r0 = true;
+                    }
+                    if j == 0 {
+                        c0 = true;
+                    }
+                    if i > 0 && j > 0 {
+                        matrix[i][0] = 0;
+                        matrix[0][j] = 0;
+                    }
                 }
             }
         }
 
-        for i in 0..n {
-            for j in 0..m {
-                if row[i] || col[j] {
+        for i in 1..n {
+            for j in 1..m {
+                if matrix[i][0] == 0 || matrix[0][j] == 0 {
                     matrix[i][j] = 0;
                 }
             } 
+        }
+
+        for i in 0..n {
+            if c0 {
+                matrix[i][0] = 0;
+            }
+        }
+
+        for j in 0..m {
+            if r0 {
+                matrix[0][j] = 0;
+            }
         }
     }
 }
