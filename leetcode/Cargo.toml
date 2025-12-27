@@ -79,4 +79,8 @@ path = "src/problems/search_matrix.rs"
 name = "search_insert"
 path = "src/problems/search_insert.rs"
 
+[[bin]]
+name = "permutations"
+path = "src/problems/permutations.rs"
+
 [dependencies]
