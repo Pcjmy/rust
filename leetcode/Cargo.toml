@@ -83,4 +83,8 @@ path = "src/problems/search_insert.rs"
 name = "permutations"
 path = "src/problems/permutations.rs"
 
+[[bin]]
+name = "subsets"
+path = "src/problems/subsets.rs"
+
 [dependencies]
