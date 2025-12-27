@@ -63,4 +63,8 @@ path = "src/problems/first_missing_positive.rs"
 name = "set_matrix_zeroes"
 path = "src/problems/set_matrix_zeroes.rs"
 
+[[bin]]
+name = "spiral_matrix"
+path = "src/problems/spiral_matrix.rs"
+
 [dependencies]
