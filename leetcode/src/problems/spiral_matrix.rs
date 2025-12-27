@@ -6,31 +6,21 @@ impl Solution {
         let m = matrix[0].len();
         let mut vis: Vec<Vec<bool>> = vec![vec![false; m]; n];
         let dir: [(i32, i32); 4] = [(0, 1), (1, 0), (0, -1), (-1, 0)];
-        let mut i = 0;
-        let mut cnt = 0;
         let mut ans = Vec::new();
         let mut x = 0;
         let mut y = 0;
-        vis[0][0] = true;
-        ans.push(matrix[0][0]);
-        cnt += 1;
+        let mut z = 0;
 
-        while cnt < n * m {
-            let (dx, dy) = dir[i];
-            while true {
-                let _x = x + dx;
-                let _y = y + dy;
-                if _x >= 0 && _x < n as i32 && _y >= 0 && _y < m as i32 && !vis[_x as usize][_y as usize] {
-                    vis[_x as usize][_y as usize] = true;
-                    ans.push(matrix[_x as usize][_y as usize]);
-                    cnt += 1;
-                    x = _x;
-                    y = _y;
-                } else {
-                    break;
-                }
+        for i in 0..n*m {
+            vis[x][y]=true;
+            ans.push(matrix[x][y]);
+            let _x = x as i32 + dir[z].0;
+            let _y = y as i32 + dir[z].1;
+            if _x < 0 || _x >= n as i32 || _y < 0 || _y >= m as i32 || vis[_x as usize][_y as usize] {
+                z = (z + 1) % 4;
             }
-            i = (i + 1) % 4;
+            x = (x as i32 + dir[z].0) as usize;
+            y = (y as i32 + dir[z].1) as usize;
         }
 
         return ans;
