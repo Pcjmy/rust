@@ -91,4 +91,8 @@ path = "src/problems/subsets.rs"
 name = "letter_combinations"
 path = "src/problems/letter_combinations.rs"
 
+[[bin]]
+name = "combination_sum"
+path = "src/problems/combination_sum.rs"
+
 [dependencies]
