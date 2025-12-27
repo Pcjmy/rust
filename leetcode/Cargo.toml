@@ -87,4 +87,8 @@ path = "src/problems/permutations.rs"
 name = "subsets"
 path = "src/problems/subsets.rs"
 
+[[bin]]
+name = "letter_combinations"
+path = "src/problems/letter_combinations.rs"
+
 [dependencies]
