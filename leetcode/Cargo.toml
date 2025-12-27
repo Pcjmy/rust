@@ -71,4 +71,8 @@ path = "src/problems/spiral_matrix.rs"
 name = "rotate_matrix"
 path = "src/problems/rotate_matrix.rs"
 
+[[bin]]
+name = "search_matrix"
+path = "src/problems/search_matrix.rs"
+
 [dependencies]
