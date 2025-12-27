@@ -59,4 +59,8 @@ path = "src/problems/product_except_self.rs"
 name = "first_missing_positive"
 path = "src/problems/first_missing_positive.rs"
 
+[[bin]]
+name = "set_matrix_zeroes"
+path = "src/problems/set_matrix_zeroes.rs"
+
 [dependencies]
