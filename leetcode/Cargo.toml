@@ -99,4 +99,8 @@ path = "src/problems/combination_sum.rs"
 name = "triangle"
 path = "src/problems/triangle.rs"
 
+[[bin]]
+name = "house_robber"
+path = "src/problems/house_robber.rs"
+
 [dependencies]
