@@ -95,4 +95,8 @@ path = "src/problems/letter_combinations.rs"
 name = "combination_sum"
 path = "src/problems/combination_sum.rs"
 
+[[bin]]
+name = "triangle"
+path = "src/problems/triangle.rs"
+
 [dependencies]
