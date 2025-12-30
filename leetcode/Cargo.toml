@@ -115,4 +115,8 @@ path = "src/problems/coin_change.rs"
 name = "word_break"
 path = "src/problems/word_break.rs"
 
+[[bin]]
+name = "max_product"
+path = "src/problems/max_product.rs"
+
 [dependencies]
