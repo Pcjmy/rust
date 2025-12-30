@@ -123,4 +123,8 @@ path = "src/problems/max_product.rs"
 name = "partition_equal_subset_sum"
 path = "src/problems/partition_equal_subset_sum.rs"
 
+[[bin]]
+name = "longest_valid_parentheses"
+path = "src/problems/longest_valid_parentheses.rs"
+
 [dependencies]
