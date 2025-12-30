@@ -107,4 +107,8 @@ path = "src/problems/house_robber.rs"
 name = "perfect_squares"
 path = "src/problems/perfect_squares.rs"
 
+[[bin]]
+name = "coin_change"
+path = "src/problems/coin_change.rs"
+
 [dependencies]
