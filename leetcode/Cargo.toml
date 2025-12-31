@@ -183,4 +183,8 @@ path = "src/problems/majority_element.rs"
 name = "sort_colors"
 path = "src/problems/sort_colors.rs"
 
+[[bin]]
+name = "palindromic_substrings"
+path = "src/problems/palindromic_substrings.rs"
+
 [dependencies]
