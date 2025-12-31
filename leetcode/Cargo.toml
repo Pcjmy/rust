@@ -131,4 +131,8 @@ path = "src/problems/longest_valid_parentheses.rs"
 name = "max_profit"
 path = "src/problems/max_profit.rs"
 
+[[bin]]
+name = "jump_game"
+path = "src/problems/jump_game.rs"
+
 [dependencies]
