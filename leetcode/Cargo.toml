@@ -159,4 +159,8 @@ path = "src/problems/palindrome_partitioning.rs"
 name = "min_stack"
 path = "src/problems/min_stack.rs"
 
+[[bin]]
+name = "decode_string"
+path = "src/problems/decode_string.rs"
+
 [dependencies]
