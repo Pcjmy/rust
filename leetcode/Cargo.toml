@@ -163,4 +163,8 @@ path = "src/problems/min_stack.rs"
 name = "decode_string"
 path = "src/problems/decode_string.rs"
 
+[[bin]]
+name = "daily_temperatures"
+path = "src/problems/daily_temperatures.rs"
+
 [dependencies]
