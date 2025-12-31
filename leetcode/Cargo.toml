@@ -171,4 +171,8 @@ path = "src/problems/daily_temperatures.rs"
 name = "largest_rectangle_area"
 path = "src/problems/largest_rectangle_area.rs"
 
+[[bin]]
+name = "single_number"
+path = "src/problems/single_number.rs"
+
 [dependencies]
