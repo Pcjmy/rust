@@ -151,4 +151,8 @@ path = "src/problems/word_search.rs"
 name = "valid_parentheses"
 path = "src/problems/valid_parentheses.rs"
 
+[[bin]]
+name = "palindrome_partitioning"
+path = "src/problems/palindrome_partitioning.rs"
+
 [dependencies]
