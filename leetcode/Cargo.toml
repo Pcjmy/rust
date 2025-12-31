@@ -135,4 +135,8 @@ path = "src/problems/max_profit.rs"
 name = "jump_game"
 path = "src/problems/jump_game.rs"
 
+[[bin]]
+name = "jump_game_ii"
+path = "src/problems/jump_game_ii.rs"
+
 [dependencies]
