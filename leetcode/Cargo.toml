@@ -147,4 +147,8 @@ path = "src/problems/partition_labels.rs"
 name = "word_search"
 path = "src/problems/word_search.rs"
 
+[[bin]]
+name = "valid_parentheses"
+path = "src/problems/valid_parentheses.rs"
+
 [dependencies]
