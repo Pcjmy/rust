@@ -155,4 +155,8 @@ path = "src/problems/valid_parentheses.rs"
 name = "palindrome_partitioning"
 path = "src/problems/palindrome_partitioning.rs"
 
+[[bin]]
+name = "min_stack"
+path = "src/problems/min_stack.rs"
+
 [dependencies]
