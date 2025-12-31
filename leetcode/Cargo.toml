@@ -175,4 +175,8 @@ path = "src/problems/largest_rectangle_area.rs"
 name = "single_number"
 path = "src/problems/single_number.rs"
 
+[[bin]]
+name = "majority_element"
+path = "src/problems/majority_element.rs"
+
 [dependencies]
