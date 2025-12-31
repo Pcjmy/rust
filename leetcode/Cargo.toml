@@ -143,4 +143,8 @@ path = "src/problems/jump_game_ii.rs"
 name = "partition_labels"
 path = "src/problems/partition_labels.rs"
 
+[[bin]]
+name = "word_search"
+path = "src/problems/word_search.rs"
+
 [dependencies]
