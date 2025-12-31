@@ -179,4 +179,8 @@ path = "src/problems/single_number.rs"
 name = "majority_element"
 path = "src/problems/majority_element.rs"
 
+[[bin]]
+name = "sort_colors"
+path = "src/problems/sort_colors.rs"
+
 [dependencies]
