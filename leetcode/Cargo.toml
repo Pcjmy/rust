@@ -187,4 +187,8 @@ path = "src/problems/sort_colors.rs"
 name = "palindromic_substrings"
 path = "src/problems/palindromic_substrings.rs"
 
+[[bin]]
+name = "find_kth_largest"
+path = "src/problems/find_kth_largest.rs"
+
 [dependencies]
